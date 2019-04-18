@@ -7,17 +7,17 @@ import org.junit.runners.Parameterized.Parameters;
 public class TestingAL {
 
 	@Parameter
-	public  String firstElement = "Roflan1";
+	public String firstElement = "Roflan1";
 	@Parameter
-	public  String secondElement = "Roflan2";
+	public String secondElement = "Roflan2";
 	@Parameter
-	public  String thirdElement = "Roflan3";
+	public String thirdElement = "Roflan3";
 	@Parameter
-	public  String lastElement = "RoflanLast";
+	public String lastElement = "RoflanLast";
 	@Parameter
-	public  String insideElement = "RoflanInside";
+	public String insideElement = "RoflanInside";
 	@Parameter
-	public  int insideElementIndex = 2;
+	public int insideElementIndex = 2;
 	@Parameter
 	public MyArrayList<String> testData = listInitializing();
 
@@ -36,7 +36,7 @@ public class TestingAL {
 		Assert.assertEquals(firstElement, testData.get(0));
 		//testing add without index & size
 		testData.add(lastElement);
-		Assert.assertEquals(lastElement, testData.get(testData.size()-1));
+		Assert.assertEquals(lastElement, testData.get(testData.size() - 1));
 		//testing add with index(inside)
 		testData.add(insideElement, insideElementIndex);
 		Assert.assertEquals(insideElement, testData.get(insideElementIndex));

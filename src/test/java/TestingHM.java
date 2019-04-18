@@ -51,9 +51,9 @@ public class TestingHM {
 		//testing toString
 		StringBuilder bufferForTest = new StringBuilder();
 		for (int i = 0; i < testData.size(); i++) {
-			if(i != testData.size()- 1){
-			bufferForTest.append("Key - " + i + " Value = " + testData.get(i) + ", ");}
-			else{
+			if (i != testData.size() - 1) {
+				bufferForTest.append("Key - " + i + " Value = " + testData.get(i) + ", ");
+			} else {
 				bufferForTest.append("Key - " + i + " Value = " + testData.get(i));
 			}
 		}
