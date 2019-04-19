@@ -1,33 +1,29 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runners.Parameterized.Parameter;
-import org.junit.runners.Parameterized.Parameters;
-
 
 public class TestingLL {
 
-	@Parameter
-	public String firstElement = "Roflan1";
-	@Parameter
-	public String secondElement = "Roflan2";
-	@Parameter
-	public String thirdElement = "Roflan3";
-	@Parameter
-	public String lastElement = "RoflanLast";
-	@Parameter
-	public String insideElement = "RoflanInside";
-	@Parameter
-	public int insideElementIndex = 2;
-	@Parameter
-	public MyLinkedList<String> testData = listInitializing();
+	private String firstElement;
+	private String secondElement;
+	private String thirdElement;
+	private String lastElement;
+	private String insideElement;
+	private int insideElementIndex;
+	private MyLinkedList<String> testData;
 
-	@Parameters
-	private MyLinkedList<String> listInitializing() {
-		MyLinkedList<String> listData = new MyLinkedList<String>();
-		listData.add(firstElement);
-		listData.add(secondElement);
-		listData.add(thirdElement);
-		return listData;
+	@Before
+	public void dataInitializing() {
+		firstElement = "Roflan1";
+		secondElement = "Roflan2";
+		thirdElement = "Roflan3";
+		lastElement = "RoflanLast";
+		insideElement = "RoflanInside";
+		insideElementIndex = 2;
+		testData = new MyLinkedList<String>();
+		testData.add(firstElement);
+		testData.add(secondElement);
+		testData.add(thirdElement);
 	}
 
 	@Test

@@ -1,40 +1,33 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runners.Parameterized.Parameter;
-import org.junit.runners.Parameterized.Parameters;
-
 
 public class TestingHM {
 
-	@Parameter
-	public String firstElement = "Roflan1";
-	@Parameter
-	public int firstElementKey = 0;
+	private String firstElement;
+	private int firstElementKey;
+	private String secondElement;
+	private int secondElementKey;
+	private String thirdElement;
+	private int thirdElementKey;
+	private String lastElement;
+	private int lastElementKey;
+	private MyHashMap<Integer, String> testData;
 
-	@Parameter
-	public String secondElement = "Roflan2";
-	@Parameter
-	public int secondElementKey = 1;
-
-	@Parameter
-	public String thirdElement = "Roflan3";
-	@Parameter
-	public int thirdElementKey = 2;
-
-	@Parameter
-	public String lastElement = "RoflanLast";
-	@Parameter
-	public int lastElementKey = 3;
-
-	public MyHashMap<Integer, String> testData = mapInitializing();
-
-	@Parameters
-	private MyHashMap<Integer, String> mapInitializing() {
-		MyHashMap<Integer, String> mapData = new MyHashMap<Integer, String>();
-		mapData.put(firstElementKey, firstElement);
-		mapData.put(secondElementKey, secondElement);
-		mapData.put(thirdElementKey, thirdElement);
-		return mapData;
+	@Before
+	public void dataInitializing() {
+		firstElement = "Roflan1";
+		firstElementKey = 0;
+		secondElement = "Roflan2";
+		secondElementKey = 1;
+		thirdElement = "Roflan3";
+		thirdElementKey = 2;
+		lastElement = "RoflanLast";
+		lastElementKey = 3;
+		testData = new MyHashMap<Integer, String>();
+		testData.put(firstElementKey, firstElement);
+		testData.put(secondElementKey, secondElement);
+		testData.put(thirdElementKey, thirdElement);
 	}
 
 	@Test
