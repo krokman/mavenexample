@@ -31,16 +31,32 @@ public class TestingHM {
 	}
 
 	@Test
-	public void testingAllFunctionalityOfHashMap() {
+	public void size() {
 		//testing size
 		Assert.assertEquals(3, testData.size());
+	}
+
+	@Test
+	public void get() {
 		//testing get of key
 		Assert.assertEquals(firstElement, testData.get(0));
+	}
+
+	@Test
+	public void put() {
 		//testing put
 		testData.put(lastElementKey, lastElement);
 		Assert.assertEquals(lastElement, testData.get(lastElementKey));
+	}
+
+	@Test
+	public void remove() {
 		//testing remove with key
-		Assert.assertEquals(testData.remove(lastElementKey), lastElement);
+		Assert.assertEquals(testData.remove(firstElementKey), firstElement);
+	}
+
+	@Test
+	public void toStringTest() {
 		//testing toString
 		StringBuilder bufferForTest = new StringBuilder();
 		for (int i = 0; i < testData.size(); i++) {
@@ -51,6 +67,10 @@ public class TestingHM {
 			}
 		}
 		Assert.assertEquals(bufferForTest.toString(), testData.toString());
+	}
+
+	@Test
+	public void clear() {
 		//testing clear
 		testData.clear();
 		Assert.assertEquals(new MyHashMap<Integer, String>().size(), testData.size());

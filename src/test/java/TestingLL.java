@@ -19,7 +19,7 @@ public class TestingLL {
 		thirdElement = "Roflan3";
 		lastElement = "RoflanLast";
 		insideElement = "RoflanInside";
-		insideElementIndex = 2;
+		insideElementIndex = 1;
 		testData = new MyLinkedList<String>();
 		testData.add(firstElement);
 		testData.add(secondElement);
@@ -27,25 +27,53 @@ public class TestingLL {
 	}
 
 	@Test
-	public void testingAllFunctionalityOfLinkedList() {
+	public void get() {
 		//testing get
 		Assert.assertEquals(firstElement, testData.get(0));
+	}
+
+	@Test
+	public void add() {
 		//testing add without index & size
 		testData.add(lastElement);
 		Assert.assertEquals(lastElement, testData.get(testData.size() - 1));
+	}
+
+	@Test
+	public void addWithIndex() {
 		//testing add with index(inside)
 		testData.add(insideElement, insideElementIndex);
 		Assert.assertEquals(insideElement, testData.get(insideElementIndex));
+	}
+
+	@Test
+	public void set() {
 		//testing set with index
 		testData.set(firstElement, insideElementIndex);
 		Assert.assertEquals(firstElement, testData.get(insideElementIndex));
+	}
+
+	@Test
+	public void remove() {
 		//testing remove with index
-		Assert.assertEquals(testData.remove(insideElementIndex), firstElement);
+		Assert.assertEquals(testData.remove(insideElementIndex), secondElement);
+	}
+
+	@Test
+	public void removeValue() {
 		//testing remove Value
 		testData.remove(firstElement);
 		Assert.assertEquals(secondElement, testData.get(0));
+	}
+
+	@Test
+	public void isEmpty() {
 		//testing isEmpty
 		Assert.assertFalse(testData.isEmpty());
+	}
+
+	@Test
+	public void toStringTest() {
 		//testing toString
 		StringBuilder bufferForTest = new StringBuilder();
 		for (int i = 0; i < testData.size(); i++) {
